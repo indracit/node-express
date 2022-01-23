@@ -11,13 +11,13 @@
   "scripts": {
     "start": "node server.js"
   },
-  "description": "",
+  "description": "first express app",
   "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/indracit/node-express.git"
   },
-  "author": "",
+  "author": "indracit S",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/indracit/node-express/issues"
