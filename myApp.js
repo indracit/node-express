@@ -1,7 +1,9 @@
 require('dotenv').config()
 var express = require('express')
 var app = express()
-console.log('Hello World')
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use('/public', express.static(__dirname + '/public'))
 app.use((req, res, next) => {
   console.log(req.method + ' ' + req.path + ' - ' + req.ip)
@@ -40,6 +42,6 @@ app
     res.json({ name: req.query.first + ' ' + req.query.last })
   })
   .post((req, res) => {
-    res.json({ first: req.query.first, last: req.query.last })
+    res.json({ name: req.body.first + ' ' + req.body.last })
   })
 module.exports = app
