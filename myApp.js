@@ -33,4 +33,13 @@ app.get(
 app.get('/:word/echo', (req, res) => {
   res.json({ echo: req.params.word })
 })
+
+app
+  .route('/name')
+  .get((req, res) => {
+    res.json({ name: req.query.first + ' ' + req.query.last })
+  })
+  .post((req, res) => {
+    res.json({ first: req.query.first, last: req.query.last })
+  })
 module.exports = app
